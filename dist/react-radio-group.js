@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    displayName: 'ReactRadioGroup',
 
 	    propTypes: {
-	        name: React.PropTypes.string.isRequired,
+	        ChildName: React.PropTypes.string.isRequired,
 	        items: function(props, name){
 	            if (!props.children && !props.items){
 	                return new Error('Your component has no children. In this case, you should specify an items array.')
@@ -104,7 +104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    setRadioNames: function() {
 	        this.forEachRadio(function(radio){
-	            radio.setAttribute('name', this.props.name)
+	            radio.setAttribute('name', this.props.childName)
 	        })
 	    },
 
@@ -241,7 +241,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var inputProps = {
 	                checked : checked,
 	                value   : value,
-	                name    : props.name,
+	                name    : props.childName,
 	                type    : 'radio',
 	                style   : inputStyle,
 	                onChange: emptyFn
@@ -251,10 +251,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	                key       : index,
 	                checked   : checked,
 	                index     : index,
-	                name      : props.name,
+	                name      : props.childName,
 	                value     : value,
 	                style     : labelStyle,
 	                inputProps: inputProps,
+	                className : props.childClass,
 	                children  : [
 	                    React.createElement("input", React.__spread({},  inputProps)),
 	                    children
@@ -276,6 +277,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, this)
 	    }
 	})
+
 
 /***/ },
 /* 1 */
