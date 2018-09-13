@@ -1,5 +1,5 @@
 {
-  "name": "react-radio",
+  "name": "@unovo/react-radio",
   "version": "1.0.6",
   "description": "React RadioGroup",
   "main": "lib/index.js",
